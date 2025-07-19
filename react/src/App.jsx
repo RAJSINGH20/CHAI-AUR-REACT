@@ -4,12 +4,13 @@ import './App.css'
 // import Tail_css from './Components/Tail_css'
 // import Card from './Components/Card'
 // import Bg_changer from './Components/Bg_changer'
-import Pass_gen from './Components/Pass_gen'
+// import Pass_gen from './Components/Pass_gen'
+import Currency_converter from './Components/Currency/Currency_converter'
 
 function App() {
   
   return (
-    <><Pass_gen/></>
+    <><Currency_converter/></>
     
   )
 }
