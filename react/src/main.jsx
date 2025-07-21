@@ -7,13 +7,17 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import Layout from "./Components/Project/Layout/Layout.jsx";
-import Home from "./Components/Project/Home/Home.jsx";
-import About from "./Components/Project/About/About.jsx";
-import Contact from "./Components/Project/Contact/Contact.jsx";
-import User from "./Components/Project/User/User.jsx";
+import Layout from "./Components/Project_2/Layout/Layout.jsx";
+import Home from "./Components/Project_2/Home/Home.jsx";
+import About from "./Components/Project_2/About/About.jsx";
+
 import { Route } from "react-router-dom";
-import Github from "./Components/Project/Github/Github.jsx";
+
+import Project from "./Components/Project_2/Projects/Project.jsx";
+import Bg_changer from "./Components/Bg_changer.jsx";
+import Pass_gen from "./Components/Pass_gen.jsx";
+import Counter from "./Components/Counter.jsx";
+import Card from "./Components/Card.jsx";
 
 // const router = createBrowserRouter([
 //   {
@@ -49,15 +53,19 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
       <Route path="About" element={<About />} />
-      <Route path="Contact" element={<Contact />} />
-      <Route path="User/:RAJ/" element={<User />} />
-      <Route path="Github" element={<Github />}/>
+      <Route path="Projects" element={<Project/>} />
+      <Route path="Projects" element={<Project/>} />
+      <Route path="bg-changer" element={<Bg_changer/>} />
+      <Route path="password-gen" element={<Pass_gen/>} />
+      <Route path="counter" element={<Counter/>} />
+      <Route path="bg-changer" element={<Bg_changer/>} />
+      <Route path="card" element={<Card/>} />
     </Route>
   )
 );
 
 createRoot(document.getElementById("root")).render(
-  // <><RouterProvider router={router} />
-  <App/>
+  <RouterProvider router={router} />
+  
   
 );

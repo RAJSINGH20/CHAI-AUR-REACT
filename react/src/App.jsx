@@ -9,14 +9,13 @@ import Currency_converter from './Components/Currency/Currency_converter'
 import Header from './Components/Project/Header/Header'
 import Footer from './Components/Project/Footer/Footer'
 import Search_engine from './Components/Serach_engine/Search_engine'
-
+import Navbar from './Components/Project_2/Navbar/Navbar'
+import Bg_changer from "./Components/Bg_changer";
 function App() {
   
   return (
     <>
-      
-      <Search_engine/>
-
+     <Bg_changer/>
     </>
     
     
