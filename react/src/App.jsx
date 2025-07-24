@@ -12,11 +12,12 @@ import Search_engine from './Components/Serach_engine/Search_engine'
 import Navbar from './Components/Project_2/Navbar/Navbar'
 import Bg_changer from "./Components/Bg_changer";
 import BackgroundChanger from "./Components/Project_2/Background_Changer/Background_changer";
+import TodoList from './Components/TodoList/TodoList'
 function App() {
   
   return (
     <>
-      <BackgroundChanger />
+      <TodoList />
     </>
   );
 }
