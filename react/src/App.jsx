@@ -11,15 +11,14 @@ import Footer from './Components/Project/Footer/Footer'
 import Search_engine from './Components/Serach_engine/Search_engine'
 import Navbar from './Components/Project_2/Navbar/Navbar'
 import Bg_changer from "./Components/Bg_changer";
+import BackgroundChanger from "./Components/Project_2/Background_Changer/Background_changer";
 function App() {
   
   return (
     <>
-     <Bg_changer/>
+      <BackgroundChanger />
     </>
-    
-    
-  )
+  );
 }
 
 export default App

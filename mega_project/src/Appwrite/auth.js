@@ -1,4 +1,4 @@
-import conf from "../confifg/conf";
+import conf from "../config/conf.js"; // ✅ Fixed path
 import { Client, Account, ID } from "appwrite";
 
 export class AuthServices {
@@ -6,7 +6,7 @@ export class AuthServices {
   account;
 
   constructor() {
-    this.client = new Client(); // Capital 'C' in Client
+    this.client = new Client();
     this.client
       .setEndpoint(conf.appwrite_url)
       .setProject(conf.appwrite_PROJECT_ID);
@@ -20,23 +20,24 @@ export class AuthServices {
         ID.unique(),
         email,
         password,
-        name
+        name || '' // ✅ Ensure name is at least an empty string
       );
       if (userAcc) {
-        // Call login directly
-        return this.login({ email, password });
+        return this.login({ email, password }); // auto-login after registration
       } else {
         return userAcc;
       }
     } catch (error) {
+      console.error("Error in createAccount:", error);
       throw error;
     }
   }
 
   async login({ email, password }) {
     try {
-      return await this.account.createEmailSession(email, password); // Fixed typo: create**Email**Session
+      return await this.account.createSession(email, password);
     } catch (error) {
+      console.error("Error in login:", error);
       throw error;
     }
   }
@@ -45,7 +46,7 @@ export class AuthServices {
     try {
       return await this.account.get();
     } catch (error) {
-      console.log("The service error:", error);
+      console.error("Error in getCurrentUser:", error);
       return null;
     }
   }
@@ -54,6 +55,7 @@ export class AuthServices {
     try {
       return await this.account.deleteSessions();
     } catch (error) {
+      console.error("Error in logout:", error);
       throw error;
     }
   }
